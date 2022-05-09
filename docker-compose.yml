@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:13-alpine
+    restart: always
+
+    environment:
+      POSTGRES_USER: $POSTGRES_USER
+      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+      POSTGRES_ROOT: $POSTGRES_ROOT
+      POSTGRES_DATABASE: $POSTGRES_DATABASE
+
+    env_file: .env
+
+    ports:
+      - $DB_LOCAL_PORT:$POSTGRES_PORT
