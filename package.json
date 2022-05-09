@@ -25,6 +25,9 @@
   },
   "scripts": {
     "test": "jest",
-    "dev:http": "tsnd --exit-child src/http/express/server.ts"
+    "dev:http": "tsnd --exit-child src/http/express/server.ts",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/http/express/server.js"
   }
 }
